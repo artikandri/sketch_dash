@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/props/land/Tanah_004.png" type="Texture" id=3]
+[ext_resource path="res://scenes/misc/MusicTrack.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/dungeon/World.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/levels/Outside.gd" type="Script" id=18]
+
+[node name="Outside" type="Node"]
+script = ExtResource( 18 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -5605.0
+margin_top = -6606.0
+margin_right = 7163.0
+margin_bottom = 6162.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+
+[node name="World" parent="." instance=ExtResource( 11 )]
+
+[node name="music_track" parent="." instance=ExtResource( 6 )]
+music_track = "res://music/310-world-map-loop.ogg"
+
+[node name="UI" parent="." instance=ExtResource( 2 )]

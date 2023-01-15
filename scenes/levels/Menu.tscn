@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/dialog.tres" type="DynamicFont" id=1]
+[ext_resource path="res://textures/menu/Cover.jpg" type="Texture" id=2]
+[ext_resource path="res://textures/misc/logo-logo.png" type="Texture" id=3]
+[ext_resource path="res://scenes/levels/Menu.gd" type="Script" id=4]
+[ext_resource path="res://textures/misc/logo-studio.png" type="Texture" id=5]
+[ext_resource path="res://textures/misc/logo-bg.png" type="Texture" id=6]
+[ext_resource path="res://textures/menu/Cover.jpg" type="Texture" id=7]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_neighbour_left = NodePath("quit")
+focus_neighbour_top = NodePath("continue")
+focus_neighbour_right = NodePath("credits")
+focus_neighbour_bottom = NodePath("new_game")
+focus_mode = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+initial_level = "res://scenes/levels/Outside.tscn"
+
+[node name="Cover" type="Sprite" parent="."]
+position = Vector2( 526, 307 )
+scale = Vector2( 0.333523, 0.300806 )
+texture = ExtResource( 7 )
+
+[node name="BG" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo-bg" type="Sprite" parent="."]
+visible = false
+position = Vector2( 506, 300 )
+scale = Vector2( 0.337514, 0.292742 )
+texture = ExtResource( 6 )
+
+[node name="Logo-studio" type="Sprite" parent="."]
+position = Vector2( 533, 216 )
+scale = Vector2( 0.262828, 0.235484 )
+texture = ExtResource( 5 )
+
+[node name="Logo-logo" type="Sprite" parent="."]
+position = Vector2( 515, 196 )
+scale = Vector2( 0.337514, 0.292742 )
+texture = ExtResource( 3 )
+
+[node name="logo" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -236.0
+margin_top = -185.634
+margin_right = 237.0
+margin_bottom = -5.63416
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new_game" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = 74.0
+margin_right = 62.0
+margin_bottom = 123.0
+focus_neighbour_left = NodePath("../quit")
+focus_neighbour_top = NodePath("../quit")
+focus_neighbour_right = NodePath("../controls")
+focus_neighbour_bottom = NodePath("../continue")
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.364706, 0.364706, 0.364706, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "New Game"
+flat = true
+
+[node name="continue" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = 150.0
+margin_right = 51.0
+margin_bottom = 199.0
+focus_neighbour_left = NodePath("../quit")
+focus_neighbour_top = NodePath("../new_game")
+focus_neighbour_right = NodePath("../controls")
+focus_neighbour_bottom = NodePath("../controls")
+custom_colors/font_color_disabled = Color( 0.780392, 0.780392, 0.780392, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.364706, 0.364706, 0.364706, 1 )
+custom_fonts/font = ExtResource( 1 )
+disabled = true
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -114.361
+margin_top = 234.378
+margin_right = -13.3615
+margin_bottom = 283.378
+focus_neighbour_left = NodePath("../quit")
+focus_neighbour_top = NodePath("../continue")
+focus_neighbour_right = NodePath("../quit")
+focus_neighbour_bottom = NodePath("../new_game")
+custom_fonts/font = ExtResource( 1 )
+text = "Controls"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 12.9543
+margin_top = -69.3568
+margin_right = 113.954
+margin_bottom = -20.3568
+focus_neighbour_left = NodePath("../controls")
+focus_neighbour_top = NodePath("../continue")
+focus_neighbour_right = NodePath("../controls")
+focus_neighbour_bottom = NodePath("../new_game")
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

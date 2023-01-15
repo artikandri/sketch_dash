@@ -1,0 +1,220 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Button",
+"class": "ControllerButton",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/Button.gd"
+}, {
+"base": "Node",
+"class": "ControllerMapper",
+"language": "GDScript",
+"path": "res://addons/controller_icons/Mapper.gd"
+}, {
+"base": "Resource",
+"class": "ControllerSettings",
+"language": "GDScript",
+"path": "res://addons/controller_icons/Settings.gd"
+}, {
+"base": "Sprite",
+"class": "ControllerSprite",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/Sprite.gd"
+}, {
+"base": "Sprite3D",
+"class": "ControllerSprite3D",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/Sprite3D.gd"
+}, {
+"base": "TextureRect",
+"class": "ControllerTextureRect",
+"language": "GDScript",
+"path": "res://addons/controller_icons/objects/TextureRect.gd"
+}, {
+"base": "TextureRect",
+"class": "DialogBox",
+"language": "GDScript",
+"path": "res://scenes/misc/Dialog_box.gd"
+}, {
+"base": "PopupDialog",
+"class": "DialogueBox",
+"language": "GDScript",
+"path": "res://addons/dialogue_nodes/objects/dialogueBox.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scenes/characters/Enemy.gd"
+}, {
+"base": "Area2D",
+"class": "Exit",
+"language": "GDScript",
+"path": "res://scenes/misc/Exit.gd"
+}, {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "KinematicBody2D",
+"class": "MovingNpc",
+"language": "GDScript",
+"path": "res://scenes/characters/MovingNpc.gd"
+}, {
+"base": "Node2D",
+"class": "Node25D",
+"language": "GDScript",
+"path": "res://addons/node25d/node_25d.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scenes/characters/Player.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerSimple",
+"language": "GDScript",
+"path": "res://scenes/dungeon/PlayerSimple.gd"
+}, {
+"base": "RichTextEffect",
+"class": "RichTextWait",
+"language": "GDScript",
+"path": "res://addons/dialogue_nodes/objects/bbcodeWait.gd"
+}, {
+"base": "KinematicBody",
+"class": "ShadowMath25D",
+"language": "GDScript",
+"path": "res://addons/node25d/shadow_math_25d.gd"
+}, {
+"base": "Node",
+"class": "Walker",
+"language": "GDScript",
+"path": "res://scenes/dungeon/Walker.gd"
+}, {
+"base": "Node",
+"class": "YSort25D",
+"language": "GDScript",
+"path": "res://addons/node25d/y_sort_25d.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "enemy",
+"language": "GDScript",
+"path": "res://Enemies/Enemy.gd"
+} ]
+_global_script_class_icons={
+"ControllerButton": "",
+"ControllerMapper": "",
+"ControllerSettings": "",
+"ControllerSprite": "",
+"ControllerSprite3D": "",
+"ControllerTextureRect": "",
+"DialogBox": "",
+"DialogueBox": "",
+"Enemy": "",
+"Exit": "",
+"GitAPI": "",
+"MovingNpc": "",
+"Node25D": "res://addons/node25d/icons/node_25d_icon.png",
+"Player": "",
+"PlayerSimple": "",
+"RichTextWait": "",
+"ShadowMath25D": "res://addons/node25d/icons/shadow_math_25d_icon.png",
+"Walker": "",
+"YSort25D": "res://addons/node25d/icons/y_sort_25d_icon.png",
+"enemy": ""
+}
+
+[application]
+
+config/name="SketchAtlas"
+run/main_scene="res://scenes/levels/Intro.tscn"
+config/use_custom_user_dir=true
+config/icon="res://icon.png"
+
+[autoload]
+
+Music="*res://singletons/Music.tscn"
+Dialogs="*res://singletons/Dialogs.gd"
+Inventory="*res://singletons/Inventory.gd"
+Quest="*res://singletons/Quest.gd"
+Globals="*res://singletons/Globals.gd"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[input]
+
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+roll={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+
+[mono]
+
+project/assembly_name="SketchAtlas"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

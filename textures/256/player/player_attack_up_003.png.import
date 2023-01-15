@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/player_attack_up_003.png-c0b05a33a9503557c3eb750bc5218762.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://textures/256/player/player_attack_up_003.png"
+dest_files=[ "res://.import/player_attack_up_003.png-c0b05a33a9503557c3eb750bc5218762.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
