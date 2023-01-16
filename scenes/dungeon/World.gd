@@ -69,11 +69,27 @@ func _generate_level():
 	add_child(exit)
 	exit.position = walker.get_end_room().position*CELL_SIZE*SCALE
 	exit.connect("leaving_level", self, "new_level")
+<<<<<<< HEAD
 	
 	if Globals.level == 1:
 		_generate_first_level(map, walker)
 		
 	# _generate_enemies(map, walker)
+=======
+	
+	var house = House.instance()
+	add_child(house)
+	house.position = walker.get_first_room().position*CELL_SIZE*SCALE
+	
+	var bossZombie = BossZombie.instance()
+	add_child(bossZombie)
+	bossZombie.position = walker.get_end_room().position*CELL_SIZE*SCALE
+	
+	for i in ENEMY_COUNT:
+		var babyZombie = BabyZombie.instance()
+		add_child(babyZombie)
+		babyZombie.position = walker.get_random_room().position*CELL_SIZE*SCALE
+>>>>>>> 8ebdec4 (feat: animation)
 	
 	walker.queue_free()
 	_set_cells(map)

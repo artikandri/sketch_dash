@@ -29,6 +29,7 @@ func take_damage(dmg):
 	return dmg_taken
 	
 func attack():
+	print("test")
 	if rng.randi_range(0, 10) < 3:
 		return damage + 6
 	else:
