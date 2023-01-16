@@ -12,8 +12,6 @@ export(int) var WALK_SPEED = 350 # pixels per second
 export(int) var ROLL_SPEED = 1000 # pixels per second
 export(int) var hitpoints = 3
 
-var linear_vel = Vector2()
-var roll_direction = Vector2.DOWN
 const BULLET = preload("res://Bullet/Bullet.tscn")
 
 signal health_changed(current_hp)
@@ -21,9 +19,10 @@ signal health_changed(current_hp)
 export(String, "up", "down", "left", "right") var facing = "down"
 
 var despawn_fx = preload("res://scenes/misc/DespawnFX.tscn")
-
 var anim = ""
 var new_anim = ""
+var linear_vel = Vector2()
+var roll_direction = Vector2.DOWN
 
 enum { STATE_BLOCKED, STATE_IDLE, STATE_WALKING, STATE_ATTACK, STATE_ROLL, STATE_DIE, STATE_HURT }
 
@@ -45,8 +44,6 @@ func _ready():
 
 
 func _physics_process(_delta):
-	
-	## PROCESS STATES
 	match state:
 		STATE_BLOCKED:
 			new_anim = "idle_" + facing
@@ -90,8 +87,8 @@ func _physics_process(_delta):
 				target_speed += Vector2.UP
 			
 			target_speed *= WALK_SPEED
-			#linear_vel = linear_vel.linear_interpolate(target_speed, 0.9)
-			linear_vel = target_speed
+			linear_vel = linear_vel.linear_interpolate(target_speed, 0.9)
+			# linear_vel = target_speed
 			roll_direction = linear_vel.normalized()
 			
 			_update_facing()
@@ -135,20 +132,16 @@ func _physics_process(_delta):
 		$anims.play(anim)
 	pass
 
-
 func _on_dialog_started():
 	state = STATE_BLOCKED
 
 func _on_dialog_ended():
 	state = STATE_IDLE
 
-
-## HELPER FUNCS
 func goto_idle():
 	linear_vel = Vector2.ZERO
 	new_anim = "idle_" + facing
 	state = STATE_IDLE
-
 
 func _update_facing():
 	if Input.is_action_pressed("move_left"):

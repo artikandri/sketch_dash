@@ -19,17 +19,25 @@ amount = 10
 lifetime = 0.2
 local_coords = false
 emission_shape = 2
-emission_rect_extents = Vector2( 6, 26 )
+emission_rect_extents = Vector2( 50, 50 )
 gravity = Vector2( 0, 0 )
 scale_amount = 3.0
 color_ramp = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3, 1.33333 )
+scale = Vector2( 0.257813, 0.257813 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 1440.33, 66.3838, 31.7878, 230.463 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( -6, -28, -2, -28, -2, -24, 2, -24, 2, -16, 6, -16, 6, 16, 2, 16, 2, 24, -2, 24, -2, 28, -6, 28, -6, 16, -2, 16, -2, -16, -6, -16 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2( -9.66667, -14.3333 )
+scale = Vector2( 0.898882, 0.936467 )
+polygon = PoolVector2Array( 30, -0.666667, 30.6667, -0.666667, 30, 31.3333, -10.3333, 39.6667, -1, 0.333336, 30, -0.666667, 25, 3.66667 )
 
 [node name="Lifetime" type="Timer" parent="."]
 wait_time = 0.8
@@ -40,7 +48,13 @@ collision_layer = 8
 collision_mask = 6
 script = ExtResource( 2 )
 
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="BulletArea"]
+position = Vector2( -9.66667, -14.3333 )
+scale = Vector2( 0.898882, 0.936467 )
+polygon = PoolVector2Array( 30, -0.666667, 30.6667, -0.666667, 30, 31.3333, -10.3333, 39.6667, -1, 0.333336, 30, -0.666667, 25, 3.66667 )
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BulletArea"]
+visible = false
 polygon = PoolVector2Array( -6, -28, -2, -28, -2, -24, 2, -24, 2, -16, 6, -16, 6, 16, 2, 16, 2, 24, -2, 24, -2, 28, -6, 28, -6, 16, -2, 16, -2, -16, -6, -16 )
 
 [connection signal="timeout" from="Lifetime" to="." method="_on_Lifetime_timeout"]

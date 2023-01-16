@@ -26,7 +26,6 @@ func take_damage(dmg):
 	if health < 1:
 		deaths += 1
 		load_level()
-	# get_tree().get_nodes_in_group("animation")[0].play("flash")
 	return dmg_taken
 	
 func attack():
