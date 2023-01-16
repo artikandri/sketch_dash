@@ -18,6 +18,8 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="World" parent="." instance=ExtResource( 11 )]
 
 [node name="music_track" parent="." instance=ExtResource( 6 )]

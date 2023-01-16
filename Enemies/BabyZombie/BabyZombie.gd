@@ -6,6 +6,7 @@ var damage = 2
 var health = 8
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+
 onready var soft_collision = $SoftCollision
 
 func _physics_process(delta):

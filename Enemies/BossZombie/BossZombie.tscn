@@ -1,34 +1,23 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Enemies/BossZombie/BossZombie.gd" type="Script" id=1]
 [ext_resource path="res://HoverHealthBar/HoverHealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SoftCollision/SoftCollision.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Enemies/Zombie/Zombie.png" type="Texture" id=4]
+[ext_resource path="res://textures/256/monsters/doodle/monster_idle_002.png" type="Texture" id=4]
+[ext_resource path="res://textures/256/monsters/doodle/monster_idle_003.png" type="Texture" id=5]
+[ext_resource path="res://textures/256/monsters/doodle/monster_attack_003.png" type="Texture" id=6]
+[ext_resource path="res://textures/256/monsters/doodle/monster_attack_002.png" type="Texture" id=7]
+[ext_resource path="res://textures/256/monsters/doodle/monster_idle_001.png" type="Texture" id=8]
+[ext_resource path="res://textures/256/monsters/doodle/monster_attack_001.png" type="Texture" id=9]
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
-region = Rect2( 8, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
-region = Rect2( 16, 0, 8, 8 )
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 8, 8 )
-
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "attack",
-"speed": 2.0
+"speed": 8.0
 }, {
-"frames": [ SubResource( 1 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -52,8 +41,8 @@ script = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 8, 8 )
-frames = SubResource( 5 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
@@ -76,7 +65,6 @@ collision_mask = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource( 8 )
 
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_HitBox_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_HitBox_body_exited"]

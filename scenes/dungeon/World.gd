@@ -10,7 +10,11 @@ const BabyZombie = preload("res://Enemies/BabyZombie/BabyZombie.tscn")
 const BossZombie = preload("res://Enemies/BossZombie/BossZombie.tscn")
 
 const House = preload("res://scenes/props/House.tscn")
+const PaintPortal = preload("res://scenes/props/PaintPortal.tscn")
+
 const TreeBig = preload("res://scenes/props/TreeBig.tscn")
+const TreeSmall = preload("res://scenes/props/TreeSmall.tscn")
+const TreeMedium = preload("res://scenes/props/TreeMedium.tscn")
 
 const Cat = preload("res://scenes/characters/Cat2a.tscn")
 
@@ -43,10 +47,19 @@ func _generate_props(map, walker):
 	var TREE_COUNT = 10
 	for i in TREE_COUNT:
 		var treeBig = TreeBig.instance()
+		var treeSmall = TreeSmall.instance()
+		var treeMedium = TreeSmall.instance()
+		
 		treeBig.position = walker.get_random_room().position*CELL_SIZE*SCALE
 		treeBig.position.x = treeBig.position.x - randf()*10.0+1.0 
+		treeSmall.position = walker.get_random_room().position*CELL_SIZE*SCALE
+		treeSmall.position.y = treeSmall.position.y - randf()*10.0+1.0 
+		treeMedium.position = walker.get_random_room().position*CELL_SIZE*SCALE
+		treeMedium.position.y = treeMedium.position.y - randf()*10.0+1.0 
+		
 		add_child(treeBig)
-	
+		add_child(treeSmall)
+		add_child(treeMedium)
 			
 func _generate_missions(map, walker):
 	var house = House.instance()

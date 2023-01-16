@@ -28,10 +28,6 @@ func _on_HitBox_area_entered(area):
 			var babies = BABIES.instance()
 			get_parent().add_child(babies)
 			babies.global_position = global_position
-			# for spawn_position in [Vector2(30, 30), Vector2(-30, -30), Vector2(30, -30), Vector2(-30, 30)]:
-			# 	var zombie = ZOMBIE.instance()
-			# 	get_parent().add_child(zombie)
-			# 	zombie.global_position = global_position + spawn_position
 
 func _on_HitBox_body_entered(body):
 	if body.name == "Player" and !pause:
