@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/dungeon/World.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/levels/Outside.gd" type="Script" id=18]
 
-[node name="Outside" type="Node"]
+[node name="Outside" type="Node2D"]
 script = ExtResource( 18 )
 
 [node name="Background" type="TextureRect" parent="."]

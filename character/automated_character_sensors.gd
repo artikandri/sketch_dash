@@ -7,13 +7,13 @@ onready var _blocker_detection_direction = $lower_ray.cast_to.x
 onready var _edge_detection_position = $edge_detection_ray.position.x
 
 
-var _sensors_flipped = true
+var _sensors_flipped = false
 
 func _process(_delta):
-	# if _sensors_flipped == _character.is_flipped():
-	# return
+	if _sensors_flipped == _character.is_flipped():
+		return
 
-	# _sensors_flipped = _character.is_flipped()
+	_sensors_flipped = _character.is_flipped()
 
 	if _sensors_flipped:
 		_turn_right()

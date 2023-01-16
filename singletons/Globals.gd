@@ -24,7 +24,7 @@ func take_damage(dmg):
 	if health < 1:
 		deaths += 1
 		load_level()
-	get_tree().get_nodes_in_group("animation")[0].play("flash")
+	# get_tree().get_nodes_in_group("animation")[0].play("flash")
 	return dmg_taken
 	
 func attack():
@@ -63,6 +63,9 @@ func format_time():
 	
 	return "%02d:%02d.%02d" % [mins, secs, ms]
 
+func enemy_die(enemy):
+	dead_enemies.append(enemy.name)
+	enemy.queue_free()
 
 """
 Really simple save file implementation. Just saving some variables to a dictionary

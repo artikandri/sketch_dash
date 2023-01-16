@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var _gravity = preload("res://character/gravity.gd").new()
 
 var _current_speed = 0
 var _speed
@@ -8,15 +7,14 @@ var _max_speed = 4
 var _last_acceleration = Vector2()
 var _last_movement = Vector2()
 
+onready var player = Globals.player
 
 func _ready():
-	_setup_gravity()
 	_setup_speed()
 
 
 func _process(_delta):
 	_handle_movement()
-	_handle_gravity()
 	_handle_animation()
 
 
@@ -57,27 +55,13 @@ func is_flipped():
 func move(move):
 	_last_movement = move
 
-
-func jump():
-	if is_touching_floor():
-		_gravity.jump()
-
-
-func jump_cut():
-	_gravity.jump_cut()
-
-
 func is_touching_floor():
 	return test_move(self.transform, Vector2(0, 1))
 
-
 func _handle_movement():
 	# warning-ignore:return_value_discarded
-	move_and_slide(_last_acceleration, _gravity.FLOOR)
+	move_and_slide(_last_acceleration)
 
-
-func _handle_gravity():
-	_gravity.apply_gravity(self)
 
 
 func _handle_animation():
@@ -86,20 +70,12 @@ func _handle_animation():
 			$AnimatedSprite.play('running')
 		else:
 			$AnimatedSprite.play('idle')
-	else:
-		if _gravity.is_falling():
-			$AnimatedSprite.play('fall')
-		else:
-			$AnimatedSprite.play('jump')
 
 
-func _setup_gravity():
-	add_child(_gravity)
-	_gravity.init(1.5, 0.5, 0.2)
 
 
 func _setup_speed():
-	_speed = _max_speed * _gravity.movement_unit
+	_speed = _max_speed 
 
 
 # returns true when reaches position
@@ -119,6 +95,4 @@ func _is_moving():
 	return _current_speed != 0
 
 
-func get_jump_max_reach():
-	return _gravity.get_jump_real_max_height() - 16
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 const Player = preload("res://scenes/characters/Player.tscn")
-# const Follower = preload("res://character/follower.tscn")
+const Cat2 = preload("res://scenes/characters/Cat2.tscn")
 const Exit = preload("res://scenes/dungeon/ExitDoor.tscn")
 const Item = preload("res://scenes/items/Item.tscn")
 const BabyZombie = preload("res://Enemies/BabyZombie/BabyZombie.tscn")
@@ -46,9 +46,9 @@ func generate_level():
 	# add_child(cat)
 	# cat.position = map.front()*CELL_SIZE*SCALE*.95
 	
-	# var follower = Follower.instance()
-	# add_child(follower)
-	# follower.position = map.front()*CELL_SIZE*SCALE
+	var cat2 = Cat2.instance()
+	add_child(cat2)
+	cat2.position = map.front()*CELL_SIZE*SCALE
 	
 	var exit = Exit.instance()
 	add_child(exit)
@@ -57,12 +57,8 @@ func generate_level():
 	
 	var house = House.instance()
 	add_child(house)
-	house.position = walker.get_first_room().position*CELL_SIZE*SCALE
+	house.position = walker.get_random_room().position*CELL_SIZE*SCALE
 	
-	
-	var bossZombie = BossZombie.instance()
-	add_child(bossZombie)
-	bossZombie.position = walker.get_end_room().position*CELL_SIZE*SCALE
 	
 	for i in ENEMY_COUNT:
 		var babyZombie = BabyZombie.instance()
@@ -80,10 +76,11 @@ func generate_level():
 	return true
 
 func reload_level():
-	Globals.level = LEVEL
 	get_tree().reload_current_scene()
 
 # debugging purpose 
+"""
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		reload_level()
+"""

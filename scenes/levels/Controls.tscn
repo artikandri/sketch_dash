@@ -26,12 +26,13 @@ margin_left = -114.361
 margin_top = 234.378
 margin_right = -7.36102
 margin_bottom = 283.378
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.364706, 0.364706, 0.364706, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Back"
 flat = true
 __meta__ = {
 "_editor_description_": ""
 }
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
