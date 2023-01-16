@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://textures/props/land/Tanah_004.png" type="Texture" id=3]
 [ext_resource path="res://scenes/misc/MusicTrack.tscn" type="PackedScene" id=6]
@@ -25,6 +24,3 @@ stretch_mode = 2
 music_track = "res://music/Rezoner-Pirates-Theme.mp3"
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
-
-[node name="World2" parent="." instance=ExtResource( 1 )]
-visible = false

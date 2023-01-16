@@ -14,7 +14,6 @@ onready var tween = get_node("Tween")
 var aStar
 
 func _ready():
-	print(targetNode)
 	aStar=AstarFinal.new(targetNode,aStarBody,playerBody,sprite,aStarRay,tween)
 
 func _physics_process(_delta):

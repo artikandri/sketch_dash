@@ -119,6 +119,7 @@ func direction_helper(new_pos, current_pos):
 		return 2
 
 func set_position():
+	if targetNode && playerBody:
 		var new_position=pathFind(playerBody.position,targetNode.position)
 		match new_position:
 			targetNode.position:

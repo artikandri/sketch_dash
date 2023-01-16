@@ -15,10 +15,6 @@ var inputs={
 }
 
 var speed=0.3
-<<<<<<< HEAD
-=======
-
->>>>>>> 8ebdec4 (feat: animation)
 var moveHandler
 
 func _ready():

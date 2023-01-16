@@ -44,7 +44,7 @@ func handleMovement():
 				2:
 					sprite.play("Idle")
 				3:
-					sprite.play("SideIdle")
+					sprite.play("Idle")
 
 		idle=true
 		var motion_vector = Vector2()
@@ -69,7 +69,7 @@ func handleMovement():
 	else:
 		match sprite_dir:
 			1:
-				sprite.play("Up")
+				sprite.play("Down")
 			2:
 				sprite.play("Down")
 			3:

@@ -4,7 +4,7 @@ const AstarCompanion = preload("res://scripts/classes/AstarCompanion.gd")
 
 const GRID_SIZE=32
 
-onready var targetNode = get_node("/root/Outside/World/Player")
+onready var targetNode = get_node("/root/Outside/World/Elfy")
 onready var aStarBody = get_node("AstarBody")
 onready var playerBody = get_node("PlayerBody")
 onready var sprite = get_node("PlayerBody/AnimatedSprite")

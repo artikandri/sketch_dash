@@ -11,10 +11,10 @@ onready var body = self
 onready var interactableObjects = get_node("/root/World/InteractableObjects")
 
 var inputs={
-	'up' : Vector2.UP,
-	'down': Vector2.DOWN,
-	'left': Vector2.LEFT,
-	'right': Vector2.RIGHT,
+	'ui_up' : Vector2.UP,
+	'ui_down': Vector2.DOWN,
+	'ui_left': Vector2.LEFT,
+	'ui_right': Vector2.RIGHT,
 }
 
 var speed=0.3
@@ -28,7 +28,7 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("ui_interact"):
 		interactHandler.handle_interactions(position)
 	else:
 		moveHandler.handleInput()

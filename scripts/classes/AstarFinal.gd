@@ -133,22 +133,23 @@ func movement_handler():
 
 		idle=false
 		
-		var new_position=pathFind(playerBody.position,targetNode.position)
-		if new_position==null:
-			new_position=playerBody.position
-		
-		if new_position==playerBody.position:
-			idle=true
-			sprite_dir=2
-		else:
-			sprite_dir = direction_helper(new_position,playerBody.position)
-		
-		if !idle:
-			old_pos=playerBody.position
-			playerBody.position=new_position
-			sprite.position-=playerBody.position-old_pos
-			tween.interpolate_property( sprite, 'position', sprite.position, sprite.position+(playerBody.position-old_pos), 0.3, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			tween.start()
+		if targetNode && playerBody:
+			var new_position=pathFind(playerBody.position,targetNode.position)
+			if new_position==null:
+				new_position=playerBody.position
+			
+			if new_position==playerBody.position:
+				idle=true
+				sprite_dir=2
+			else:
+				sprite_dir = direction_helper(new_position,playerBody.position)
+			
+			if !idle:
+				old_pos=playerBody.position
+				playerBody.position=new_position
+				sprite.position-=playerBody.position-old_pos
+				tween.interpolate_property( sprite, 'position', sprite.position, sprite.position+(playerBody.position-old_pos), 0.3, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+				tween.start()
 	else:
 		match sprite_dir:
 			1:

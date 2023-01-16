@@ -74,7 +74,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/misc/Exit.gd"
 }, {
-"base": "",
+"base": "EditorVCSInterface",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -106,11 +106,6 @@ _global_script_classes=[ {
 }, {
 "base": "Reference",
 "class": "PlayerMovement",
-"language": "GDScript",
-"path": "res://scripts/classes/PlayerMovement.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "PlayerSimple",
 "language": "GDScript",
 "path": "res://scripts/classes/PlayerMovement.gd"
 }, {
@@ -160,7 +155,6 @@ _global_script_class_icons={
 "Player": "",
 "PlayerInteract": "",
 "PlayerMovement": "",
-"PlayerSimple": "",
 "RichTextWait": "",
 "ShadowMath25D": "res://addons/node25d/icons/shadow_math_25d_icon.png",
 "Walker": "",

@@ -22,7 +22,6 @@ func _on_HitBox_area_entered(area):
 	if "BulletArea" in area.name and !pause:
 		knockback = area.knockback_vector * 150
 		health -= Globals.attack()
-		print(health)
 		if health < 1:
 			Globals.enemy_die(self)
 
