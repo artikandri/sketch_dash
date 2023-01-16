@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "AstarCompanion",
+"language": "GDScript",
+"path": "res://scripts/classes/AstarCompanion.gd"
+}, {
+"base": "Reference",
+"class": "AstarFinal",
+"language": "GDScript",
+"path": "res://scripts/classes/AstarFinal.gd"
+}, {
+"base": "Reference",
+"class": "CharcterAnimationChange",
+"language": "GDScript",
+"path": "res://scripts/CharacterAnimationChange.gd"
+}, {
 "base": "Button",
 "class": "ControllerButton",
 "language": "GDScript",
@@ -69,6 +84,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/characters/MovingNpc.gd"
 }, {
+"base": "Reference",
+"class": "MyNodes",
+"language": "GDScript",
+"path": "res://scripts/classes/MyNodes.gd"
+}, {
 "base": "Node2D",
 "class": "Node25D",
 "language": "GDScript",
@@ -79,10 +99,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/characters/Player.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "PlayerSimple",
+"base": "Reference",
+"class": "PlayerInteract",
 "language": "GDScript",
-"path": "res://scenes/dungeon/PlayerSimple.gd"
+"path": "res://scripts/classes/PlayerInteract.gd"
+}, {
+"base": "Reference",
+"class": "PlayerMovement",
+"language": "GDScript",
+"path": "res://scripts/classes/PlayerMovement.gd"
 }, {
 "base": "RichTextEffect",
 "class": "RichTextWait",
@@ -110,6 +135,9 @@ _global_script_classes=[ {
 "path": "res://Enemies/Enemy.gd"
 } ]
 _global_script_class_icons={
+"AstarCompanion": "",
+"AstarFinal": "",
+"CharcterAnimationChange": "",
 "ControllerButton": "",
 "ControllerMapper": "",
 "ControllerSettings": "",
@@ -122,9 +150,11 @@ _global_script_class_icons={
 "Exit": "",
 "GitAPI": "",
 "MovingNpc": "",
+"MyNodes": "",
 "Node25D": "res://addons/node25d/icons/node_25d_icon.png",
 "Player": "",
-"PlayerSimple": "",
+"PlayerInteract": "",
+"PlayerMovement": "",
 "RichTextWait": "",
 "ShadowMath25D": "res://addons/node25d/icons/shadow_math_25d_icon.png",
 "Walker": "",

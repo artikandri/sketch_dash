@@ -10,7 +10,7 @@ func _ready():
 	add_to_group("enemies")
 	$HitBox.connect("area_entered", self, "hitbox")
 
-func _process(delta):
+func _process(_delta):
 	emit_signal("ready_for_hiding", self)
 	
 func delete():

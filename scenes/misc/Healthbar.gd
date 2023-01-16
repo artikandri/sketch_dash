@@ -17,7 +17,8 @@ func _ready():
 			yield(get_tree(), "idle_frame")
 	
 	player.connect("health_changed", self, "_on_health_changed")
-	_on_health_changed(player.hitpoints)
+	if(player && player.hitpoints):
+		_on_health_changed(player.hitpoints)
 	pass # Replace with function body.
 
 

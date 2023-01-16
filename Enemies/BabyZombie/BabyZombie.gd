@@ -9,7 +9,8 @@ var knockback = Vector2.ZERO
 onready var soft_collision = $SoftCollision
 
 func _physics_process(delta):
-	look_at(Globals.player.position)
+	if Globals.player != null:
+		look_at(Globals.player.position)
 	knockback = knockback.move_toward(Vector2.ZERO, friction * delta)
 	knockback = move_and_slide(knockback)
 	velocity = position.direction_to(player.position) * speed

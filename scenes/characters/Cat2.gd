@@ -7,7 +7,7 @@ var path: Array = []	# Contains destination positions
 var levelNavigation: Navigation2D = null
 # var player = null
 onready var player = Globals.player
-var player_spotted: bool = false
+var player_spotted: bool = true
 
 onready var line2d = $Line2D
 onready var los = $LineOfSight
@@ -17,13 +17,11 @@ func _ready():
 	var tree = get_tree()
 	if tree.has_group("Navigation2D"):
 		levelNavigation = tree.get_nodes_in_group("Navigation2D")[0]
-	# if tree.has_group("Player"):
-		# player = tree.get_nodes_in_group("Player")[0]
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	line2d.global_position = Vector2.ZERO
-	if player:
-		los.look_at(player.global_position)
+	if Globals.player != null:
+		los.look_at(Globals.player.position)
 		check_player_in_detection()
 		if player_spotted:
 			generate_path()
@@ -32,9 +30,8 @@ func _physics_process(delta):
 
 func check_player_in_detection() -> bool:
 	var collider = los.get_collider()
-	if collider and collider.is_in_group("Player"):
+	if collider and collider.is_in_group("player"):
 		player_spotted = true
-		print("raycast collided")	# Debug purposes
 		return true
 	return false
 
@@ -47,8 +44,8 @@ func navigate():	# Define the next position to go to
 			path.pop_front()
 
 func generate_path():	# It's obvious
-	if levelNavigation != null and player != null:
-		path = levelNavigation.get_simple_path(global_position, player.global_position, false)
+	if levelNavigation != null and Globals.player != null:
+		path = levelNavigation.get_simple_path(position, Globals.player.position, false)
 		line2d.points = path
 
 func move():

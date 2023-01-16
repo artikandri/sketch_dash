@@ -21,6 +21,6 @@ stretch_mode = 2
 [node name="World" parent="." instance=ExtResource( 11 )]
 
 [node name="music_track" parent="." instance=ExtResource( 6 )]
-music_track = "res://music/310-world-map-loop.ogg"
+music_track = "res://music/Rezoner-Pirates-Theme.mp3"
 
 [node name="UI" parent="." instance=ExtResource( 2 )]

@@ -11,6 +11,8 @@ var dead_enemies = []
 var rng = RandomNumberGenerator.new()
 var deaths = 0
 var time = 0
+var facing
+var anim 
 var player
 var cat
 var level : int = 1
@@ -50,6 +52,7 @@ func _deferred_goto_scene(path, new):
 		dead_enemies = []
 		deaths = 0
 		time = 0
+		level = 1
 	health = max_health
 	get_tree().call_group("enemies", "delete")	
 

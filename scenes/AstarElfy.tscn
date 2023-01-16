@@ -1,0 +1,89 @@
+[gd_scene load_steps=16 format=2]
+
+[sub_resource type="AtlasTexture" id=3]
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+region = Rect2( 0, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+region = Rect2( 32, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+region = Rect2( 64, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+region = Rect2( 96, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+region = Rect2( 128, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Side",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "SideIdle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "Up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "UpIdle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 16 )
+animation = "Idle"
+frame = 2
+playing = true
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )
