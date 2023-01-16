@@ -15,6 +15,9 @@ var facing
 var anim 
 var player
 var cat
+var player_state
+var player_anim
+var player_facing
 var level : int = 1
 
 func _ready():
@@ -58,6 +61,12 @@ func _deferred_goto_scene(path, new):
 func end_game():
 	get_tree().change_scene("res://GUI/GameOver.tscn")
 
+func has_finished_quest():
+	var has_finished = true
+	if level >= 1:
+		has_finished = has_finished && (Inventory.get_item("Blue ink") >= 1)
+	return has_finished
+	
 func format_time():
 	var mins = time / 60
 	var secs = int(time) % 60

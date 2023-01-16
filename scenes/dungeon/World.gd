@@ -10,6 +10,8 @@ const BabyZombie = preload("res://Enemies/BabyZombie/BabyZombie.tscn")
 const BossZombie = preload("res://Enemies/BossZombie/BossZombie.tscn")
 
 const House = preload("res://scenes/props/House.tscn")
+const TreeBig = preload("res://scenes/props/TreeBig.tscn")
+
 const Cat = preload("res://scenes/characters/Cat2a.tscn")
 
 const CELL_SIZE = 256
@@ -36,17 +38,31 @@ func _generate_enemies(map, walker):
 		var bossZombie = BossZombie.instance()
 		add_child(bossZombie)
 		bossZombie.position = walker.get_random_room().position*CELL_SIZE*SCALE
-			
-func _generate_first_level(map, walker):
-		var house = House.instance()
-		if navigation != null:
-			navigation.add_child(house)
-		house.position = walker.get_random_room().position*CELL_SIZE*SCALE
+		
+func _generate_props(map, walker):
+	var TREE_COUNT = 10
+	for i in TREE_COUNT:
+		var treeBig = TreeBig.instance()
+		treeBig.position = walker.get_random_room().position*CELL_SIZE*SCALE
+		treeBig.position.x = treeBig.position.x - randf()*10.0+1.0 
+		add_child(treeBig)
 	
-		var screentone = Screentone.instance()
-		if navigation != null:
-			navigation.add_child(screentone)
-		screentone.position = map.front()*CELL_SIZE*SCALE
+			
+func _generate_missions(map, walker):
+	var house = House.instance()
+	house.position = walker.get_first_room().position*CELL_SIZE*SCALE
+	if navigation != null:
+		navigation.add_child(house)
+	
+	var collectedAmount =  Inventory.get_item("Screentone")
+	var questAmount = 10
+	var toCollectAmount = questAmount - collectedAmount
+	if toCollectAmount > 0:
+		for i in toCollectAmount:
+			var screentone = Screentone.instance()
+			screentone.position =walker.get_random_room().position*CELL_SIZE*SCALE
+			if navigation != null:
+				navigation.add_child(screentone)
 
 func _generate_level():
 	var walker = Walker.new(Vector2(38, 22), borders)
@@ -71,10 +87,10 @@ func _generate_level():
 		navigation.add_child(exit)
 	exit.connect("leaving_level", self, "new_level")
 	
-	if Globals.level == 1:
-		_generate_first_level(map, walker)
-		
+	_generate_missions(map, walker)
 	_generate_enemies(map, walker)
+	_generate_props(map, walker)
+	
 	
 	walker.queue_free()
 	_set_cells(map)

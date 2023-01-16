@@ -1,11 +1,5 @@
 extends Area2D
 
-"""
-It just wraps around a sequence of dialogs. If it contains a child node named 'Quest'
-which should be an instance of Quest.gd it'll become a quest giver and show whatever
-text Quest.process() returns
-"""
-
 var active = true
 
 export(String) var character_name = "Ika"

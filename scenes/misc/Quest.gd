@@ -1,16 +1,5 @@
 extends Node
 
-"""
-Instance this as a child of any Npc.tscn node and it turns into a 
-quest giver.
-
-The character will also check if the player has a certain amount of a given item and if true
-Remove said amount from the players inventory and give some amount of another item as a reward
-This is only useful for fetch quests but you can also ask for '5 demon horns' or something to turn it
-into a kill quest.
-Otherwise you'll have to make a quest system a bit more complex. 
-"""
-
 export(String) var quest_name = "Collect all screentones"
 
 export(String) var required_item = "Screentone"

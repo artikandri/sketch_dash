@@ -126,10 +126,8 @@ func _recalculate_path():
 	clear_previous_path_drawing()
 	var start_point_index = calculate_point_index(path_start_position)
 	var end_point_index = calculate_point_index(path_end_position)
-	# This method gives us an array of points. Note you need the start and end
-	# points' indices as input
-	_point_path = astar_node.get_point_path(start_point_index, end_point_index)
-	# Redraw the lines and circles from the start to the end point
+	if astar_node and start_point_index and end_point_index:
+		_point_path = astar_node.get_point_path(start_point_index, end_point_index)
 	update()
 
 

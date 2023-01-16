@@ -9,21 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "AstarCompanion",
-"language": "GDScript",
-"path": "res://scripts/classes/AstarCompanion.gd"
-}, {
-"base": "Reference",
-"class": "AstarFinal",
-"language": "GDScript",
-"path": "res://scripts/classes/AstarFinal.gd"
-}, {
-"base": "Reference",
-"class": "CharcterAnimationChange",
-"language": "GDScript",
-"path": "res://scripts/CharacterAnimationChange.gd"
-}, {
 "base": "Button",
 "class": "ControllerButton",
 "language": "GDScript",
@@ -59,11 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/misc/Dialog_box.gd"
 }, {
-"base": "PopupDialog",
-"class": "DialogueBox",
-"language": "GDScript",
-"path": "res://addons/dialogue_nodes/objects/dialogueBox.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -74,7 +54,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/misc/Exit.gd"
 }, {
-"base": "EditorVCSInterface",
+"base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -84,50 +64,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/characters/MovingNpc.gd"
 }, {
-"base": "Reference",
-"class": "MyNodes",
-"language": "GDScript",
-"path": "res://scripts/classes/MyNodes.gd"
-}, {
-"base": "Node2D",
-"class": "Node25D",
-"language": "GDScript",
-"path": "res://addons/node25d/node_25d.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://scenes/characters/Player.gd"
 }, {
-"base": "Reference",
-"class": "PlayerInteract",
-"language": "GDScript",
-"path": "res://scripts/classes/PlayerInteract.gd"
-}, {
-"base": "Reference",
-"class": "PlayerMovement",
-"language": "GDScript",
-"path": "res://scripts/classes/PlayerMovement.gd"
-}, {
-"base": "RichTextEffect",
-"class": "RichTextWait",
-"language": "GDScript",
-"path": "res://addons/dialogue_nodes/objects/bbcodeWait.gd"
-}, {
-"base": "KinematicBody",
-"class": "ShadowMath25D",
-"language": "GDScript",
-"path": "res://addons/node25d/shadow_math_25d.gd"
-}, {
 "base": "Node",
 "class": "Walker",
 "language": "GDScript",
 "path": "res://scenes/dungeon/Walker.gd"
-}, {
-"base": "Node",
-"class": "YSort25D",
-"language": "GDScript",
-"path": "res://addons/node25d/y_sort_25d.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "enemy",
@@ -135,9 +80,6 @@ _global_script_classes=[ {
 "path": "res://Enemies/Enemy.gd"
 } ]
 _global_script_class_icons={
-"AstarCompanion": "",
-"AstarFinal": "",
-"CharcterAnimationChange": "",
 "ControllerButton": "",
 "ControllerMapper": "",
 "ControllerSettings": "",
@@ -145,20 +87,12 @@ _global_script_class_icons={
 "ControllerSprite3D": "",
 "ControllerTextureRect": "",
 "DialogBox": "",
-"DialogueBox": "",
 "Enemy": "",
 "Exit": "",
 "GitAPI": "",
 "MovingNpc": "",
-"MyNodes": "",
-"Node25D": "res://addons/node25d/icons/node_25d_icon.png",
 "Player": "",
-"PlayerInteract": "",
-"PlayerMovement": "",
-"RichTextWait": "",
-"ShadowMath25D": "res://addons/node25d/icons/shadow_math_25d_icon.png",
 "Walker": "",
-"YSort25D": "res://addons/node25d/icons/y_sort_25d_icon.png",
 "enemy": ""
 }
 
@@ -240,6 +174,13 @@ pause={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_render/layer_1=NodePath(".")
+2d_render/layer_2=NodePath(".")
+2d_render/layer_3="player"
+2d_render/layer_4="cat"
 
 [mono]
 
