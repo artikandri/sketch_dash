@@ -22,7 +22,7 @@ height = 0.0
 
 [node name="house" type="StaticBody2D"]
 script = SubResource( 1 )
-to_scene = "res://scenes/levels/HouseInside.tscn"
+to_scene = "res://scenes/levels/PaintInside.tscn"
 spawnpoint = "2"
 
 [node name="TileMap" type="TileMap" parent="."]

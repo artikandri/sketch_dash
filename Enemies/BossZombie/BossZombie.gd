@@ -2,8 +2,8 @@ extends enemy
 
 var speed = 110
 var friction = 300
-var damage = 20
-var health = 70
+var damage = 50
+var health = 140
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
 onready var soft_collision = $SoftCollision

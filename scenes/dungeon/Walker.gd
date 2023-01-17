@@ -67,6 +67,10 @@ func get_first_room():
 	var first_room = rooms.pop_front()
 	return first_room
 	
+func get_middle_room():
+	var mid_room_index = int(round(rooms.size()/2))
+	return rooms[mid_room_index]
+	
 func get_end_room():
 	var end_room = rooms.pop_front()
 	var starting_position = step_history.front()

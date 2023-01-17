@@ -35,23 +35,25 @@ func _ready():
 func _generate_enemies(map, walker):
 	for i in ENEMY_COUNT:
 		var babyZombie = BabyZombie.instance()
-		add_child(babyZombie)
 		babyZombie.position = walker.get_random_room().position*CELL_SIZE*SCALE
+		babyZombie.position.x = babyZombie.position.x + randf()*10.0+1.0 
+		add_child(babyZombie)
 	
-	if Globals.level > 3:
+	if Globals.level >= 3:
 		var bossZombie = BossZombie.instance()
 		add_child(bossZombie)
 		bossZombie.position = walker.get_random_room().position*CELL_SIZE*SCALE
+		bossZombie.position.x = bossZombie.position.x + randf()*10.0+1.0 
 		
 func _generate_props(map, walker):
-	var TREE_COUNT = 10
+	var TREE_COUNT = 50
 	for i in TREE_COUNT:
 		var treeBig = TreeBig.instance()
 		var treeSmall = TreeSmall.instance()
 		var treeMedium = TreeSmall.instance()
 		
 		treeBig.position = walker.get_random_room().position*CELL_SIZE*SCALE
-		treeBig.position.x = treeBig.position.x - randf()*10.0+1.0 
+		treeBig.position.x = treeBig.position.x - randf()*5+1
 		treeSmall.position = walker.get_random_room().position*CELL_SIZE*SCALE
 		treeSmall.position.y = treeSmall.position.y - randf()*10.0+1.0 
 		treeMedium.position = walker.get_random_room().position*CELL_SIZE*SCALE
@@ -63,9 +65,14 @@ func _generate_props(map, walker):
 			
 func _generate_missions(map, walker):
 	var house = House.instance()
-	house.position = walker.get_first_room().position*CELL_SIZE*SCALE
+	house.position = walker.get_middle_room().position*CELL_SIZE*SCALE
 	if navigation != null:
 		navigation.add_child(house)
+		
+	var paintPortal = PaintPortal.instance()
+	paintPortal.position = walker.get_random_room().position*CELL_SIZE*SCALE
+	if navigation != null:
+		navigation.add_child(paintPortal)
 	
 	var collectedAmount =  Inventory.get_item("Screentone")
 	var questAmount = 10
@@ -77,22 +84,23 @@ func _generate_missions(map, walker):
 			if navigation != null:
 				navigation.add_child(screentone)
 
-func _generate_level():
-	var walker = Walker.new(Vector2(38, 22), borders)
-	var WALK_SCALE = LEVEL*500
-	var map = walker.walk(WALK_SCALE)
-	
+func _generate_characters(map, walker):
 	var player = Player.instance()
-	player.position = walker.get_first_room().position*CELL_SIZE*SCALE
+	player.position = map.pop_front()*CELL_SIZE*SCALE
 	Globals.player = player
 	if navigationPolygon != null:
 		navigationPolygon.add_child(player)
 	
 	var cat = Cat.instance()
-	cat.position = walker.get_first_room().position*CELL_SIZE*SCALE
+	cat.position = map.pop_front()*CELL_SIZE*SCALE
 	Globals.cat = cat
 	if navigationPolygon != null:
 		navigationPolygon.add_child(cat)
+		
+func _generate_level():
+	var walker = Walker.new(Vector2(38, 22), borders)
+	var WALK_SCALE = LEVEL*500
+	var map = walker.walk(WALK_SCALE)
 	
 	var exit = Exit.instance()
 	exit.position = walker.get_end_room().position*CELL_SIZE*SCALE
@@ -100,10 +108,10 @@ func _generate_level():
 		navigation.add_child(exit)
 	exit.connect("leaving_level", self, "new_level")
 	
+	_generate_characters(map, walker)
 	_generate_missions(map, walker)
 	_generate_enemies(map, walker)
 	_generate_props(map, walker)
-	
 	
 	walker.queue_free()
 	_set_cells(map)
