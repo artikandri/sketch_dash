@@ -131,10 +131,11 @@ func _generate_characters():
 func _set_map_walker():
 	var WALK_SCALE = LEVEL*500
 	var walker_ref = weakref(walker)
+	var global_walker_ref = weakref(Globals.current_walker)
 	if walker == null or Globals.is_reloaded or !walker_ref.get_ref():
-		if Globals.current_walker:
+		if Globals.current_walker and !global_walker_ref.get_ref():
 			Globals.current_walker.queue_free()
-		if walker:
+		if walker and !walker_ref.get_ref():
 			walker.queue_free()
 		walker = Walker.new(Vector2(38, 22), borders)
 	if map == null or Globals.is_reloaded:

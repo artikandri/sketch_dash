@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://fonts/dialog.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/levels/PaintInsideControl.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/misc/MusicTrack.tscn" type="PackedScene" id=6]
 [ext_resource path="res://textures/256/items/board.png" type="Texture" id=7]
 [ext_resource path="res://textures/props/land/Tanah_004.png" type="Texture" id=8]
+[ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=9]
 
 [node name="PaintInside" type="Node"]
 script = ExtResource( 5 )
@@ -67,14 +68,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-margin_left = 593.0
-margin_top = 542.0
-margin_right = 985.0
-margin_bottom = 582.0
-text = "Finish the drawing and get a reward!"
-
 [node name="label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -89,5 +82,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "Finish the drawing and get special reward!"
 align = 1
 clip_text = true
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
 
 [connection signal="pressed" from="Board/Control/Button" to="Board/Control" method="_on_Button_pressed"]

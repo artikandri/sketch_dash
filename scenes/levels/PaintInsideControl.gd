@@ -11,10 +11,7 @@ func _on_Button_pressed():
 	var has_colored_everything = imageControl.has_colored_everything()
 	if has_colored_everything:
 		Quest.change_status("Finish the drawing", 2)
-		var QuestNode = get_parent().get_parent().get_parent().get_node("Quest")
-		if QuestNode:
-			var quest_dialog = QuestNode.process()
-			Dialogs.show_dialog(quest_dialog, "Drawing")
+		Dialogs.show_dialog("Thank you! You got a beautiful screentone as your reward", "Drawing")
 	get_tree().change_scene("res://scenes/levels/Outside.tscn")
 	pass # Replace with function body.
 	
