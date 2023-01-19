@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/menu_bg_sound.mp3-a31dd567a07315cb809ed745155fd860.mp3str"
+
+[deps]
+
+source_file="res://scenes/paint/assets/sounds/menu_bg_sound.mp3"
+dest_files=[ "res://.import/menu_bg_sound.mp3-a31dd567a07315cb809ed745155fd860.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

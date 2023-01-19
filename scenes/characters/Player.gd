@@ -12,7 +12,7 @@ export(int) var WALK_SPEED = 350 # pixels per second
 export(int) var ROLL_SPEED = 1000 # pixels per second
 export(int) var hitpoints = 3
 
-const BULLET = preload("res://Bullet/Bullet.tscn")
+const BULLET = preload("res://scenes/items/Bullet/Bullet.tscn")
 
 signal health_changed(current_hp)
 

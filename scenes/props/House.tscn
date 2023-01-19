@@ -13,6 +13,7 @@ export(String) var spawnpoint = \"\"
 func _ready():
 	$to_inside.to_scene = to_scene
 	$to_inside.spawnpoint = spawnpoint
+	Globals.is_in_middle = true
 	pass # Replace with function body.
 "
 
@@ -21,8 +22,10 @@ radius = 109.0
 height = 0.0
 
 [node name="house" type="StaticBody2D"]
+scale = Vector2( 0.491908, 0.534159 )
 script = SubResource( 1 )
 to_scene = "res://scenes/levels/HouseInside.tscn"
+spawnpoint = "1"
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 1

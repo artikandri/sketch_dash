@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/dialog.tres" type="DynamicFont" id=1]
 [ext_resource path="res://textures/misc/logo-logo.png" type="Texture" id=3]
 [ext_resource path="res://scenes/levels/Menu.gd" type="Script" id=4]
 [ext_resource path="res://textures/misc/logo-studio.png" type="Texture" id=5]
-[ext_resource path="res://textures/misc/logo-bg.png" type="Texture" id=6]
 [ext_resource path="res://textures/menu/Cover.jpg" type="Texture" id=7]
 
 [node name="Menu" type="Control"]
@@ -16,32 +15,12 @@ focus_neighbour_right = NodePath("credits")
 focus_neighbour_bottom = NodePath("new_game")
 focus_mode = 2
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 initial_level = "res://scenes/levels/Outside.tscn"
 
 [node name="Cover" type="Sprite" parent="."]
 position = Vector2( 526, 307 )
 scale = Vector2( 0.333523, 0.300806 )
 texture = ExtResource( 7 )
-
-[node name="BG" type="TextureRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 7 )
-expand = true
-stretch_mode = 7
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Logo-bg" type="Sprite" parent="."]
-visible = false
-position = Vector2( 506, 300 )
-scale = Vector2( 0.337514, 0.292742 )
-texture = ExtResource( 6 )
 
 [node name="Logo-studio" type="Sprite" parent="."]
 position = Vector2( 533, 216 )
@@ -127,11 +106,8 @@ focus_neighbour_top = NodePath("../continue")
 focus_neighbour_right = NodePath("../quit")
 focus_neighbour_bottom = NodePath("../new_game")
 custom_fonts/font = ExtResource( 1 )
-text = "Controls"
+text = "Story"
 flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="quit" type="Button" parent="."]
 anchor_top = 1.0

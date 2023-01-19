@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/color_on_photo.wav-8fc76373ea2db1071f9d37675b46d080.sample"
+
+[deps]
+
+source_file="res://scenes/paint/assets/sounds/color_on_photo.wav"
+dest_files=[ "res://.import/color_on_photo.wav-8fc76373ea2db1071f9d37675b46d080.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

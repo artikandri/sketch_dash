@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/misc/Exit.gd" type="Script" id=1]
-[ext_resource path="res://textures/256/backgrounds/hole-1.png" type="Texture" id=2]
+[ext_resource path="res://textures/256/backgrounds/bush-hole.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 resource_local_to_scene = true
@@ -13,6 +13,7 @@ export(String) var spawnpoint = \"\"
 func _ready():
 	$to_inside.to_scene = to_scene
 	$to_inside.spawnpoint = spawnpoint
+	Globals.is_in_middle = true
 	pass # Replace with function body.
 "
 
@@ -20,7 +21,8 @@ func _ready():
 radius = 109.0
 height = 0.0
 
-[node name="house" type="StaticBody2D"]
+[node name="PaintPortal" type="StaticBody2D"]
+scale = Vector2( -0.440195, -0.415542 )
 script = SubResource( 1 )
 to_scene = "res://scenes/levels/PaintInside.tscn"
 spawnpoint = "2"

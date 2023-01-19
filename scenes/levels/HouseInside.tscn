@@ -97,7 +97,11 @@ position = Vector2( 1090, 129 )
 shape = SubResource( 2 )
 
 [node name="lvl_camera" type="Camera2D" parent="."]
-position = Vector2( 1.10724, 6.72946 )
+position = Vector2( 152, -84 )
+limit_left = 0
+limit_top = 0
+limit_right = 0
+limit_bottom = 0
 
 [node name="NPC1" parent="lvl_camera" instance=ExtResource( 8 )]
 position = Vector2( -271.107, 201.271 )

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(float) var SPEED = 350
+export(float) var SPEED = 350.0
 
 export(String, "up", "down", "left", "right") var facing = "down"
 enum STATES { DOWN_IDLE, DOWN, SIDE, SIDE_IDLE, UP, UP_IDLE }
@@ -11,8 +11,7 @@ var path = []
 var target_point_world = Vector2()
 var target_position = Vector2()
 var velocity = Vector2()
-var distance = 50
-
+var distance = 50.0
 
 func _ready():
 	_change_state(STATES.DOWN_IDLE)

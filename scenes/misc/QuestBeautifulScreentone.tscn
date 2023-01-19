@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/misc/Quest.gd" type="Script" id=1]
+
+[node name="QuestBeautifulScreentone" type="Node"]
+script = ExtResource( 1 )
+quest_name = "Finish the drawing"
+reward_item = "Beautiful screentone"
+reward_amount = 1
+initial_text = "Finish the drawing
+"
+pending_text = "Finish the drawing
+"
+delivered_text = "Finish the drawing"
