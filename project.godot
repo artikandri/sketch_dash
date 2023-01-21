@@ -99,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SketchAtlas"
-run/main_scene="res://scenes/levels/Intro.tscn"
+run/main_scene="res://scenes/levels/Menu.tscn"
 config/use_custom_user_dir=true
 config/icon="res://icon.png"
 

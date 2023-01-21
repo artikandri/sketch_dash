@@ -69,7 +69,10 @@ func get_first_room():
 	
 func get_middle_room():
 	var mid_room_index = int(round(rooms.size()/2))
-	return rooms[mid_room_index]
+	var room = null
+	if rooms.size() > 0:
+		room = rooms[mid_room_index]
+	return room
 	
 func get_middle_random_room():
 	var room = null

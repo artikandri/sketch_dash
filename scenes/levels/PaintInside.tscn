@@ -50,7 +50,26 @@ margin_right = -45.0
 margin_bottom = -395.0
 script = ExtResource( 2 )
 
-[node name="Button" type="Button" parent="Board/Control"]
+[node name="Clean" type="Button" parent="Board/Control"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = 374.0
+margin_right = 96.0
+margin_bottom = 423.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Clean"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Finish" type="Button" parent="Board/Control"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -84,5 +103,7 @@ align = 1
 clip_text = true
 
 [node name="UI" parent="." instance=ExtResource( 9 )]
+visible = false
 
-[connection signal="pressed" from="Board/Control/Button" to="Board/Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Board/Control/Clean" to="Board/Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Board/Control/Finish" to="." method="_on_Finish_pressed"]

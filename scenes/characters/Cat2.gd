@@ -45,9 +45,7 @@ func generate_path():	# It's obvious
 	if levelNavigation != null and player != null:
 		var self_position = get_parent().get_node('Cat').get_global_position()
 		var player_position = get_parent().get_node('Player').position
-		print(get_global_position(), player_position)
 		path = levelNavigation.get_simple_path(get_global_position(), player_position, false)
-		print(path)
 		line2d.points = path
 
 func move():

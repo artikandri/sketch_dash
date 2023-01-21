@@ -56,9 +56,6 @@ custom_fonts/font = ExtResource( 1 )
 text = "Got x thingie"
 align = 1
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

@@ -3,16 +3,38 @@
 [ext_resource path="res://Fonts/Apple ][.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/Apple ][-lg.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/Apple ][-sm.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/GUI/Menu.gd" type="Script" id=4]
 [ext_resource path="res://scenes/GUI/button_up.tres" type="StyleBox" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var start_button = $Start
+const BUTTON_DOWN = preload(\"res://scenes/GUI/button_down.tres\")
+const BUTTON_UP = preload(\"res://scenes/GUI/button_up.tres\")
+
+func _ready():
+	start_button.connect(\"button_down\", self, \"_on_start_button_down\")
+	start_button.connect(\"button_up\", self, \"_on_start_button_up\")
+	start_button.connect(\"pressed\", self, \"_on_start_button_pressed\")
+
+func _on_start_button_down():
+	start_button.rect_position += Vector2(0, 4)
+	start_button.add_stylebox_override(\"pressed\", BUTTON_DOWN)
+	start_button.add_stylebox_override(\"normal\", BUTTON_DOWN)
+
+func _on_start_button_up():
+	start_button.rect_position -= Vector2(0, 4)
+	start_button.add_stylebox_override(\"pressed\", BUTTON_UP)
+	start_button.add_stylebox_override(\"normal\", BUTTON_UP)
+
+func _on_start_button_pressed():
+	Globals.load_level(true)
+"
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = SubResource( 1 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 64.0

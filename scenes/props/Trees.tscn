@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/props/TreeBig.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/props/TreeSmall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/props/TreeMedium.tscn" type="PackedScene" id=3]
+
+[node name="Trees" type="Node2D"]
+z_index = 4003
+
+[node name="TreeBig2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -294, 445 )
+
+[node name="TreeMedium" parent="." instance=ExtResource( 3 )]
+position = Vector2( -228, 495 )
+
+[node name="TreeSmall" parent="." instance=ExtResource( 2 )]
+position = Vector2( -348, 537 )

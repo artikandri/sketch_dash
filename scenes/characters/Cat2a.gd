@@ -30,7 +30,6 @@ func _change_state(new_state):
 		target_point_world = path[1]
 	_state = new_state
 
-
 func _process(_delta):
 	var arrived_to_next_point = move_to(target_point_world)
 	if arrived_to_next_point:

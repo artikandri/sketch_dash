@@ -45,7 +45,7 @@ func attack():
 		return rng.randi_range(damage, damage + 2)
 		
 func go_to_upper_level():
-	if level >= 5:
+	if level >5:
 		end_game()
 		return
 	level +=1 
@@ -79,7 +79,23 @@ func _deferred_goto_scene(path, new):
 		level = 1
 		current_map = null
 		current_walker = null
+		is_in_middle = false
+		is_reloaded = false
 	health = max_health
+	get_tree().call_group("enemies", "delete")	
+
+func reset_data():
+	bullets = 2
+	damage = 2
+	max_health = 100
+	dead_enemies = []
+	deaths = 0
+	time = 0
+	level = 1
+	current_map = null
+	current_walker = null
+	health = max_health
+	current_level = ""
 	get_tree().call_group("enemies", "delete")	
 
 func end_game():
@@ -88,7 +104,7 @@ func end_game():
 func has_finished_quest():
 	var has_finished = true
 	if level >= 1:
-		has_finished = has_finished && (Inventory.get_item("Blue ink") >= 1)
+		has_finished = has_finished && (Inventory.get_item("Blue ink") >= 1) && (Inventory.get_item("Beautiful screentone") >= 1)
 	return has_finished
 
 func enemy_die(enemy):

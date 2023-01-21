@@ -29,13 +29,21 @@ size_flags_vertical = 3
 
 [node name="Paused" type="Label" parent="VBoxContainer"]
 margin_right = 984.0
-margin_bottom = 43.0
+margin_bottom = 89.0
 custom_fonts/font = ExtResource( 2 )
-text = "Paused"
+text = "Paused
+"
+align = 1
+
+[node name="Level" type="Label" parent="VBoxContainer"]
+margin_top = 93.0
+margin_right = 984.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 2 )
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 47.0
+margin_top = 140.0
 margin_right = 984.0
 margin_bottom = 507.0
 size_flags_horizontal = 3
@@ -44,7 +52,7 @@ alignment = 1
 
 [node name="Quests" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_right = 490.0
-margin_bottom = 460.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -59,7 +67,7 @@ align = 1
 [node name="Details" type="Label" parent="VBoxContainer/HBoxContainer/Quests"]
 margin_top = 47.0
 margin_right = 490.0
-margin_bottom = 460.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
@@ -71,7 +79,7 @@ Quest 4"
 [node name="Inventory" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_left = 494.0
 margin_right = 984.0
-margin_bottom = 460.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 
 [node name="Title" type="Label" parent="VBoxContainer/HBoxContainer/Inventory"]
@@ -84,7 +92,7 @@ align = 1
 [node name="Details" type="Label" parent="VBoxContainer/HBoxContainer/Inventory"]
 margin_top = 47.0
 margin_right = 490.0
-margin_bottom = 460.0
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
@@ -96,7 +104,7 @@ margin_top = 511.0
 margin_right = 984.0
 margin_bottom = 560.0
 custom_fonts/font = ExtResource( 2 )
-text = "Back to Game"
+text = "Save and Quit Game"
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

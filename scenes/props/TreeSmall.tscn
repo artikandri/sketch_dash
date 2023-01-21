@@ -5,12 +5,13 @@
 [sub_resource type="PhysicsMaterial" id=3]
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 179.5
-height = 100.0
+radius = 147.5
+height = 0.0
 
 [node name="TreeSmall" type="StaticBody2D"]
-position = Vector2( -992, 2153 )
+position = Vector2( -280, 533 )
 scale = Vector2( 0.25, 0.25 )
+z_index = 4004
 physics_material_override = SubResource( 3 )
 
 [node name="TreesBig" type="Sprite" parent="."]

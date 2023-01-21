@@ -621,7 +621,7 @@ height = 0.0
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 position = Vector2( 159, 245 )
 scale = Vector2( 0.5, 0.5 )
-z_index = 4096
+z_index = 3000
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]

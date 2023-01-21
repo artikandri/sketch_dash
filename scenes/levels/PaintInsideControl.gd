@@ -4,10 +4,14 @@ var imageControl = preload("res://scenes/paint/img.gd").new()
 
 func _ready():
 	Quest.accept_quest("Finish the drawing")
-	$Button.grab_focus()
+	$Clean.grab_focus()
+	$Finish.grab_focus()
 	pass
+	
+func _on_Clean_pressed():
+	imageControl._ready()
 
-func _on_Button_pressed():
+func _on_Finish_pressed():
 	var has_colored_everything = imageControl.has_colored_everything()
 	if has_colored_everything:
 		Quest.change_status("Finish the drawing", 2)

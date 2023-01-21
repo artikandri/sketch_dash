@@ -17,5 +17,5 @@ func _on_body_entered(body):
 			Globals.current_level = to_scene
 			Globals.load_level()
 		else:
-			Dialogs.show_dialog("Sorry, please collect the blue ink first.", "exit door")
+			Dialogs.show_dialog("Sorry, please finish the quests first.", "exit door")
 	pass

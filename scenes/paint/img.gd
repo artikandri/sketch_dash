@@ -13,32 +13,35 @@ var main_color = Color8(212,212,212)
 var previous_animation_player = null
 var mode: int = 0
 var brush = Globals.brush
-var run = false
 var activeLine
 
 var stars = preload("res://scenes/paint/paricles.tscn")
 
 func _ready():
 	var lines_overlay_node = get_node("../lines_overlay")
-	if Globals.painting_type == "drawing":
-		lines_overlay_node.visible = false
-		scale = Vector2(1,1)
-	else:
-		lines_overlay_node.texture = load("res://scenes/paint/assets/paint/images/overlays/"+ String(img_id) + ".png")
-		img = img_resource.get_data()
-		img.lock()
-		thread = Thread.new()
-		clean()
-	
+	lines_overlay_node.texture = load("res://scenes/paint/assets/paint/images/overlays/"+ String(img_id) + ".png")
+	img = img_resource.get_data()
+	img.lock()
+	thread = Thread.new()
+	clean()
 	texture = img_resource
 	
 func has_colored_everything():
-	return true
+	var has_colored_everything = true
+	img.lock()
+	for row in img.get_height():
+		for column in img.get_width():
+			print(img.get_pixel(column, row))
+			if img.get_pixel(column, row) == ColorN("white"):
+				has_colored_everything = false
+			else:
+				has_colored_everything = true
+	img.unlock()
+	return has_colored_everything
 
 func clean():
 	var sizeX = img.get_size().x - 1
 	var sizeY = img.get_size().y - 1
-	
 	for i in range(sizeX):
 		for j in range(sizeY):
 			if img.get_pixel(i,j).r < 0.9 and img.get_pixel(i,j).g < 0.9 and img.get_pixel(i,j).b < 0.9 or img.get_pixel(i,j).a < 0.9:
@@ -109,6 +112,7 @@ func color(position):
 			stack.append(currentY-1)
 	imageTexture.create_from_image(img,32)
 	texture = imageTexture
+	print(texture)
 
 func _on_Area2D_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
