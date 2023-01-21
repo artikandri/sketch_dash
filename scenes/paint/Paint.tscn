@@ -1,0 +1,2002 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://scenes/paint/assets/crayons2/98.png" type="Texture" id=2]
+[ext_resource path="res://scenes/paint/assets/crayons2/180.png" type="Texture" id=3]
+[ext_resource path="res://scenes/paint/assets/crayons2/74.png" type="Texture" id=4]
+[ext_resource path="res://scenes/paint/assets/crayons2/20.png" type="Texture" id=5]
+[ext_resource path="res://scenes/paint/assets/crayons2/50.png" type="Texture" id=6]
+[ext_resource path="res://scenes/paint/assets/pattern/screentone_4.png" type="Texture" id=7]
+[ext_resource path="res://scenes/paint/assets/crayons2/0.png" type="Texture" id=8]
+[ext_resource path="res://scenes/paint/assets/crayons2/10.png" type="Texture" id=9]
+[ext_resource path="res://scenes/paint/assets/paint/bg/sidepanel.png" type="Texture" id=10]
+[ext_resource path="res://scenes/paint/assets/crayons2/144.png" type="Texture" id=11]
+[ext_resource path="res://scenes/paint/Area2D2.gd" type="Script" id=12]
+[ext_resource path="res://scenes/paint/img.gd" type="Script" id=13]
+[ext_resource path="res://scenes/paint/assets/crayons2/212.png" type="Texture" id=14]
+[ext_resource path="res://scenes/paint/assets/paint/bg/wooden-frame.png" type="Texture" id=15]
+[ext_resource path="res://scenes/paint/assets/pattern/screentone_3.png" type="Texture" id=16]
+[ext_resource path="res://scenes/paint/assets/pattern/screentone_5.png" type="Texture" id=17]
+[ext_resource path="res://scenes/paint/assets/pattern/screentone_2.png" type="Texture" id=18]
+[ext_resource path="res://scenes/paint/assets/pattern/screentone_1.png" type="Texture" id=19]
+[ext_resource path="res://scenes/paint/assets/paint/buttons/crayon_button.png" type="Texture" id=21]
+[ext_resource path="res://scenes/paint/assets/paint/buttons/hover_crayon_button.png" type="Texture" id=22]
+[ext_resource path="res://scenes/paint/assets/paint/buttons/hover_pattern_button.png" type="Texture" id=23]
+[ext_resource path="res://scenes/paint/assets/paint/buttons/pattern_button.png" type="Texture" id=24]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_min_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_top")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 112.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("..:rect_min_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("..:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "crayon-move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_min_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SC:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1760, 160 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SC2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2164, 160 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "switch_colors_and_patterns"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("SC:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1760, 160 ), Vector2( 2164, 160 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SC2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2164, 160 ), Vector2( 2164, 160 ), Vector2( 1760, 160 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 909.489, 426.264 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 737.5, 514 )
+
+[node name="Paint" type="Node2D"]
+
+[node name="WE" type="WorldEnvironment" parent="."]
+
+[node name="img" type="Sprite" parent="."]
+position = Vector2( 196, 47 )
+scale = Vector2( 8, 8 )
+centered = false
+script = ExtResource( 13 )
+
+[node name="border" type="Sprite" parent="."]
+modulate = Color( 0.9, 0.9, 0.9, 1 )
+position = Vector2( 908, 536 )
+texture = ExtResource( 15 )
+
+[node name="SC" type="ScrollContainer" parent="."]
+modulate = Color( 0.9, 0.9, 0.9, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 1760.0
+margin_top = 160.0
+margin_right = 2153.0
+margin_bottom = 865.0
+rect_min_size = Vector2( 205, 705 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+scroll_horizontal_enabled = false
+scroll_deadzone = 20
+
+[node name="HC" type="HBoxContainer" parent="SC"]
+margin_right = 381.0
+margin_bottom = 1016.0
+custom_constants/separation = 60
+
+[node name="VB_" type="VBoxContainer" parent="SC/HC"]
+margin_bottom = 1016.0
+
+[node name="VB" type="VBoxContainer" parent="SC/HC"]
+margin_left = 60.0
+margin_right = 381.0
+margin_bottom = 1016.0
+rect_pivot_offset = Vector2( 307, 5 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = -8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCPurple" type="CenterContainer" parent="SC/HC/VB"]
+margin_right = 321.0
+margin_bottom = 120.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCPurple"]
+root_node = NodePath("../Purple")
+anims/RESET = SubResource( 3 )
+anims/crayon-move = SubResource( 2 )
+
+[node name="Purple" type="TextureButton" parent="SC/HC/VB/CCPurple"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 14 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCGreen" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCGreen"]
+root_node = NodePath("../Green")
+anims/RESET = SubResource( 4 )
+anims/crayon-move = SubResource( 5 )
+
+[node name="Green" type="TextureButton" parent="SC/HC/VB/CCGreen"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCRed" type="CenterContainer" parent="SC/HC/VB"]
+margin_left = -90.0
+margin_top = 224.0
+margin_right = 321.0
+margin_bottom = 344.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCRed"]
+root_node = NodePath("../Red")
+anims/RESET = SubResource( 6 )
+anims/crayon-move = SubResource( 7 )
+
+[node name="Red" type="TextureButton" parent="SC/HC/VB/CCRed"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 11 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCYellow" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 336.0
+margin_right = 321.0
+margin_bottom = 456.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCYellow"]
+root_node = NodePath("../Yellow")
+anims/RESET = SubResource( 8 )
+anims/crayon-move = SubResource( 9 )
+
+[node name="Yellow" type="TextureButton" parent="SC/HC/VB/CCYellow"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCBlue" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 448.0
+margin_right = 321.0
+margin_bottom = 568.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCBlue"]
+root_node = NodePath("../Blue")
+anims/RESET = SubResource( 10 )
+anims/crayon-move = SubResource( 11 )
+
+[node name="Blue" type="TextureButton" parent="SC/HC/VB/CCBlue"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCBrown" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 560.0
+margin_right = 321.0
+margin_bottom = 680.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCBrown"]
+root_node = NodePath("../Brown")
+anims/RESET = SubResource( 12 )
+anims/crayon-move = SubResource( 13 )
+
+[node name="Brown" type="TextureButton" parent="SC/HC/VB/CCBrown"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 6 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCSkyBlue" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 672.0
+margin_right = 321.0
+margin_bottom = 792.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCSkyBlue"]
+root_node = NodePath("../SkyBlue")
+anims/RESET = SubResource( 14 )
+anims/crayon-move = SubResource( 15 )
+
+[node name="SkyBlue" type="TextureButton" parent="SC/HC/VB/CCSkyBlue"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCPink" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 784.0
+margin_right = 321.0
+margin_bottom = 904.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCPink"]
+root_node = NodePath("../Pink")
+anims/RESET = SubResource( 16 )
+anims/crayon-move = SubResource( 17 )
+
+[node name="Pink" type="TextureButton" parent="SC/HC/VB/CCPink"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 9 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCDarkGreen" type="CenterContainer" parent="SC/HC/VB"]
+margin_top = 896.0
+margin_right = 321.0
+margin_bottom = 1016.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC/HC/VB/CCDarkGreen"]
+root_node = NodePath("../DarkGreen")
+anims/RESET = SubResource( 18 )
+anims/crayon-move = SubResource( 19 )
+
+[node name="DarkGreen" type="TextureButton" parent="SC/HC/VB/CCDarkGreen"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 8 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SC2" type="ScrollContainer" parent="."]
+modulate = Color( 0.9, 0.9, 0.9, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 2164.0
+margin_top = 160.0
+margin_right = 2546.0
+margin_bottom = 865.0
+rect_min_size = Vector2( 205, 705 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+scroll_horizontal_enabled = false
+scroll_deadzone = 20
+
+[node name="HC" type="HBoxContainer" parent="SC2"]
+margin_right = 381.0
+margin_bottom = 568.0
+custom_constants/separation = 60
+
+[node name="VB_" type="VBoxContainer" parent="SC2/HC"]
+margin_bottom = 568.0
+
+[node name="VB" type="VBoxContainer" parent="SC2/HC"]
+margin_left = 60.0
+margin_right = 381.0
+margin_bottom = 568.0
+rect_pivot_offset = Vector2( 307, 5 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = -8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCBallon" type="CenterContainer" parent="SC2/HC/VB"]
+margin_right = 321.0
+margin_bottom = 120.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC2/HC/VB/CCBallon"]
+root_node = NodePath("../Ballon")
+anims/RESET = SubResource( 20 )
+anims/crayon-move = SubResource( 21 )
+
+[node name="Ballon" type="TextureButton" parent="SC2/HC/VB/CCBallon"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 19 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCBlueWhite" type="CenterContainer" parent="SC2/HC/VB"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC2/HC/VB/CCBlueWhite"]
+root_node = NodePath("../BlueWhite")
+anims/RESET = SubResource( 22 )
+anims/crayon-move = SubResource( 23 )
+
+[node name="BlueWhite" type="TextureButton" parent="SC2/HC/VB/CCBlueWhite"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 18 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCPinkBlue" type="CenterContainer" parent="SC2/HC/VB"]
+margin_left = -90.0
+margin_top = 224.0
+margin_right = 321.0
+margin_bottom = 344.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC2/HC/VB/CCPinkBlue"]
+root_node = NodePath("../PinkBlue")
+anims/RESET = SubResource( 24 )
+anims/crayon-move = SubResource( 25 )
+
+[node name="PinkBlue" type="TextureButton" parent="SC2/HC/VB/CCPinkBlue"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 16 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCStreetArt" type="CenterContainer" parent="SC2/HC/VB"]
+margin_top = 336.0
+margin_right = 321.0
+margin_bottom = 456.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC2/HC/VB/CCStreetArt"]
+root_node = NodePath("../StreetArt")
+anims/RESET = SubResource( 26 )
+anims/crayon-move = SubResource( 27 )
+
+[node name="StreetArt" type="TextureButton" parent="SC2/HC/VB/CCStreetArt"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 7 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CCYellowDonuts" type="CenterContainer" parent="SC2/HC/VB"]
+margin_top = 448.0
+margin_right = 321.0
+margin_bottom = 568.0
+mouse_filter = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SC2/HC/VB/CCYellowDonuts"]
+root_node = NodePath("../YellowDonuts")
+anims/RESET = SubResource( 28 )
+anims/crayon-move = SubResource( 29 )
+
+[node name="YellowDonuts" type="TextureButton" parent="SC2/HC/VB/CCYellowDonuts"]
+margin_top = 112.0
+margin_right = 321.0
+margin_bottom = 232.0
+rect_pivot_offset = Vector2( 0, 50 )
+mouse_filter = 1
+texture_normal = ExtResource( 17 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrayonBox" type="Sprite" parent="."]
+modulate = Color( 0.9, 0.9, 0.9, 1 )
+position = Vector2( 1924, 522.5 )
+texture = ExtResource( 10 )
+
+[node name="ToolSwitcher" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 30 )
+anims/switch_colors_and_patterns = SubResource( 31 )
+
+[node name="CrayonButton" type="TextureButton" parent="."]
+modulate = Color( 0.9, 0.9, 0.9, 1 )
+margin_left = 1875.0
+margin_top = 236.5
+margin_right = 2005.0
+margin_bottom = 361.5
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+
+[node name="PatternButon" type="TextureButton" parent="."]
+modulate = Color( 0.9, 0.9, 0.9, 1 )
+margin_left = 1875.0
+margin_top = 404.5
+margin_right = 1990.0
+margin_bottom = 519.5
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 908, 537 )
+scale = Vector2( 0.777359, 1.11668 )
+shape = SubResource( 1 )
+
+[node name="lines_overlay" type="TextureRect" parent="."]
+margin_left = 196.0
+margin_top = 47.0
+margin_right = 1603.0
+margin_bottom = 1024.0
+mouse_filter = 2
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 907.5, 536 )
+shape = SubResource( 32 )
+
+[connection signal="pressed" from="SC/HC/VB/CCPurple/Purple" to="img" method="_on_Purple_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCGreen/Green" to="img" method="_on_Green_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCRed/Red" to="img" method="_on_Red_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCYellow/Yellow" to="img" method="_on_Yellow_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCBlue/Blue" to="img" method="_on_Blue_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCBrown/Brown" to="img" method="_on_Brown_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCSkyBlue/SkyBlue" to="img" method="_on_Skyblue_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCPink/Pink" to="img" method="_on_Pink_pressed"]
+[connection signal="pressed" from="SC/HC/VB/CCDarkGreen/DarkGreen" to="img" method="_on_Darkgreen_pressed"]
+[connection signal="pressed" from="SC2/HC/VB/CCBallon/Ballon" to="img" method="_on_Ballon_pressed"]
+[connection signal="pressed" from="SC2/HC/VB/CCBlueWhite/BlueWhite" to="img" method="_on_BlueWhite_pressed"]
+[connection signal="pressed" from="SC2/HC/VB/CCPinkBlue/PinkBlue" to="img" method="_on_PinkBlue_pressed"]
+[connection signal="pressed" from="SC2/HC/VB/CCStreetArt/StreetArt" to="img" method="_on_StreetArt_pressed"]
+[connection signal="pressed" from="SC2/HC/VB/CCYellowDonuts/YellowDonuts" to="img" method="_on_YellowDonuts_pressed"]
+[connection signal="pressed" from="CrayonButton" to="img" method="_on_CrayonButton_pressed"]
+[connection signal="pressed" from="PatternButon" to="img" method="_on_PatternButon_pressed"]
+[connection signal="input_event" from="Area2D" to="img" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Area2D2" to="Area2D2" method="_on_Area2D2_input_event"]

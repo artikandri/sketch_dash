@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fonts/dialog.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/levels/PaintInsideControl.gd" type="Script" id=2]
+[ext_resource path="res://scenes/paint/Paint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/misc/QuestBeautifulScreentone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/levels/PaintInside.gd" type="Script" id=5]
+[ext_resource path="res://scenes/misc/MusicTrack.tscn" type="PackedScene" id=6]
+[ext_resource path="res://textures/256/items/board.png" type="Texture" id=7]
+[ext_resource path="res://textures/props/land/Tanah_004.png" type="Texture" id=8]
+[ext_resource path="res://scenes/misc/UI.tscn" type="PackedScene" id=9]
+
+[node name="PaintInside" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = -5605.0
+margin_top = -6606.0
+margin_right = 7163.0
+margin_bottom = 6162.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="Quest" parent="." instance=ExtResource( 4 )]
+initial_text = "Please finish the drawing"
+pending_text = "Please finish the drawing"
+delivered_text = "Thank you! This is your beautiful screentone.
+"
+
+[node name="Paint" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5, 8 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 9
+
+[node name="music_track" parent="." instance=ExtResource( 6 )]
+music_track = "res://music/a-2-3-groovy-bgm.ogg"
+
+[node name="Board" type="Sprite" parent="."]
+position = Vector2( 85, 435 )
+z_index = 10
+texture = ExtResource( 7 )
+
+[node name="Control" type="Control" parent="Board"]
+margin_left = -85.0
+margin_top = -435.0
+margin_right = -45.0
+margin_bottom = -395.0
+script = ExtResource( 2 )
+
+[node name="Clean" type="Button" parent="Board/Control"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = 374.0
+margin_right = 96.0
+margin_bottom = 423.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.25098, 0.25098, 0.25098, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Clean"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Finish" type="Button" parent="Board/Control"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -5.0
+margin_top = 419.0
+margin_right = 102.0
+margin_bottom = 468.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.145098, 0.145098, 0.145098, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Finish"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 240.0
+margin_right = 431.0
+margin_bottom = 283.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Finish the drawing and get special reward!"
+align = 1
+clip_text = true
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[connection signal="pressed" from="Board/Control/Clean" to="Board/Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Board/Control/Finish" to="." method="_on_Finish_pressed"]

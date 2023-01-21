@@ -12,9 +12,11 @@ export(int) var WALK_SPEED = 350 # pixels per second
 export(int) var ROLL_SPEED = 1000 # pixels per second
 export(int) var hitpoints = 3
 
-const BULLET = preload("res://Bullet/Bullet.tscn")
+const BULLET = preload("res://scenes/items/Bullet/Bullet.tscn")
 
 signal health_changed(current_hp)
+
+enum { STATE_BLOCKED, STATE_IDLE, STATE_WALKING, STATE_ATTACK, STATE_ROLL, STATE_DIE, STATE_HURT }
 
 export(String, "up", "down", "left", "right") var facing = "down"
 
@@ -23,9 +25,6 @@ var anim = ""
 var new_anim = ""
 var linear_vel = Vector2()
 var roll_direction = Vector2.DOWN
-
-enum { STATE_BLOCKED, STATE_IDLE, STATE_WALKING, STATE_ATTACK, STATE_ROLL, STATE_DIE, STATE_HURT }
-
 var state = STATE_IDLE
 
 # Move the player to the corresponding spawnpoint, if any and connect to the dialog system
@@ -126,9 +125,11 @@ func _physics_process(_delta):
 		STATE_HURT:
 			new_anim = "hurt"
 	
+	Globals.player_state = state
 	## UPDATE ANIMATION
 	if new_anim != anim:
 		anim = new_anim
+		Globals.player_anim = anim
 		$anims.play(anim)
 	pass
 
@@ -152,6 +153,7 @@ func _update_facing():
 		facing = "up"
 	if Input.is_action_pressed("move_down"):
 		facing = "down"
+	Globals.player_facing = facing
 
 func despawn():
 	var despawn_particles = despawn_fx.instance()

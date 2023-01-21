@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://textures/256/plants/plant-4.png" type="Texture" id=1]
+
+[node name="flower" type="StaticBody2D"]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 34.3217, 434.143 )
+texture = ExtResource( 1 )
+offset = Vector2( -16.3217, -449.143 )

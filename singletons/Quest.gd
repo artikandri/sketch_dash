@@ -1,20 +1,11 @@
 extends Node
 
-"""
-Minimal quest system implementation.
-
-A dictionary where each string key represents a quest and an int value represanting a status
-"""
-
 enum STATUS { NONEXISTENT, STARTED, COMPLETE, FAILED }
 
-
-# Emitted whenever a quests changes. It'll pass the quest name and new status
 signal quest_changed(quest_name, status)
 
 var quest_list = {}
 
-# Get the status of a quest. If it's not found it returns STATUS.NONEXISTENT
 func get_status(quest_name:String) -> int:
 	if quest_list.has(quest_name):
 		return quest_list[quest_name]
@@ -22,13 +13,10 @@ func get_status(quest_name:String) -> int:
 		return STATUS.NONEXISTENT
 	pass
 
-
 func get_status_as_text(quest_name:String) -> int:
 	var status = get_status(quest_name)
 	return STATUS.keys()[status]
 
-
-# Change the state of some quest. status should be Quests.STATUS.<some status>
 func change_status(quest_name:String, status:int) -> bool:
 	if quest_list.has(quest_name):
 		quest_list[quest_name] = status
@@ -38,7 +26,6 @@ func change_status(quest_name:String, status:int) -> bool:
 		return false
 	pass
 
-# Start a new quest
 func accept_quest(quest_name:String) -> bool:
 	if quest_list.has(quest_name):
 		return false
@@ -48,8 +35,6 @@ func accept_quest(quest_name:String) -> bool:
 		return true
 	pass
 
-
-# List all the quest in a certain status
 func list(status:int) -> Array:
 	if status == -1:
 		return quest_list.keys()
@@ -64,8 +49,6 @@ func list(status:int) -> Array:
 func get_quest_list() -> Dictionary:
 	return quest_list.duplicate()
 
-
-# Remove a quest from the list of quests
 func remove_quest(quest_name:String) -> bool:
 	if quest_list.has(quest_name):
 		quest_list.erase(quest_name)

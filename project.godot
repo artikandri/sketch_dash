@@ -9,21 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "AstarCompanion",
-"language": "GDScript",
-"path": "res://scripts/classes/AstarCompanion.gd"
-}, {
-"base": "Reference",
-"class": "AstarFinal",
-"language": "GDScript",
-"path": "res://scripts/classes/AstarFinal.gd"
-}, {
-"base": "Reference",
-"class": "CharcterAnimationChange",
-"language": "GDScript",
-"path": "res://scripts/CharacterAnimationChange.gd"
-}, {
 "base": "Button",
 "class": "ControllerButton",
 "language": "GDScript",
@@ -59,16 +44,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/misc/Dialog_box.gd"
 }, {
-"base": "PopupDialog",
-"class": "DialogueBox",
-"language": "GDScript",
-"path": "res://addons/dialogue_nodes/objects/dialogueBox.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://scenes/characters/Enemy.gd"
-}, {
 "base": "Area2D",
 "class": "Exit",
 "language": "GDScript",
@@ -84,60 +59,27 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/characters/MovingNpc.gd"
 }, {
-"base": "Reference",
-"class": "MyNodes",
-"language": "GDScript",
-"path": "res://scripts/classes/MyNodes.gd"
-}, {
-"base": "Node2D",
-"class": "Node25D",
-"language": "GDScript",
-"path": "res://addons/node25d/node_25d.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://scenes/characters/Player.gd"
 }, {
 "base": "Reference",
-"class": "PlayerInteract",
+"class": "PoissonDiscSampling",
 "language": "GDScript",
-"path": "res://scripts/classes/PlayerInteract.gd"
-}, {
-"base": "Reference",
-"class": "PlayerMovement",
-"language": "GDScript",
-"path": "res://scripts/classes/PlayerMovement.gd"
-}, {
-"base": "RichTextEffect",
-"class": "RichTextWait",
-"language": "GDScript",
-"path": "res://addons/dialogue_nodes/objects/bbcodeWait.gd"
-}, {
-"base": "KinematicBody",
-"class": "ShadowMath25D",
-"language": "GDScript",
-"path": "res://addons/node25d/shadow_math_25d.gd"
+"path": "res://scripts/PoissonDiscSampling.gd"
 }, {
 "base": "Node",
 "class": "Walker",
 "language": "GDScript",
 "path": "res://scenes/dungeon/Walker.gd"
 }, {
-"base": "Node",
-"class": "YSort25D",
-"language": "GDScript",
-"path": "res://addons/node25d/y_sort_25d.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "enemy",
 "language": "GDScript",
-"path": "res://Enemies/Enemy.gd"
+"path": "res://scenes/characters/Enemies/Enemy.gd"
 } ]
 _global_script_class_icons={
-"AstarCompanion": "",
-"AstarFinal": "",
-"CharcterAnimationChange": "",
 "ControllerButton": "",
 "ControllerMapper": "",
 "ControllerSettings": "",
@@ -145,27 +87,19 @@ _global_script_class_icons={
 "ControllerSprite3D": "",
 "ControllerTextureRect": "",
 "DialogBox": "",
-"DialogueBox": "",
-"Enemy": "",
 "Exit": "",
 "GitAPI": "",
 "MovingNpc": "",
-"MyNodes": "",
-"Node25D": "res://addons/node25d/icons/node_25d_icon.png",
 "Player": "",
-"PlayerInteract": "",
-"PlayerMovement": "",
-"RichTextWait": "",
-"ShadowMath25D": "res://addons/node25d/icons/shadow_math_25d_icon.png",
+"PoissonDiscSampling": "",
 "Walker": "",
-"YSort25D": "res://addons/node25d/icons/y_sort_25d_icon.png",
 "enemy": ""
 }
 
 [application]
 
 config/name="SketchAtlas"
-run/main_scene="res://scenes/levels/Intro.tscn"
+run/main_scene="res://scenes/levels/Menu.tscn"
 config/use_custom_user_dir=true
 config/icon="res://icon.png"
 
@@ -240,6 +174,23 @@ pause={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+ui_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+clik={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_render/layer_1=NodePath(".")
+2d_render/layer_2=NodePath(".")
+2d_render/layer_3="player"
+2d_render/layer_4="cat"
 
 [mono]
 

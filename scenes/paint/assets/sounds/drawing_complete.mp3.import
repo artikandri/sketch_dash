@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/drawing_complete.mp3-50b8277e2da486bded6e827c7dde97d0.mp3str"
+
+[deps]
+
+source_file="res://scenes/paint/assets/sounds/drawing_complete.mp3"
+dest_files=[ "res://.import/drawing_complete.mp3-50b8277e2da486bded6e827c7dde97d0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

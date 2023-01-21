@@ -153,10 +153,9 @@ tracks/3/keys = {
 }
 
 [node name="Item" type="Area2D" groups=["items"]]
-scale = Vector2( 0.125, 0.125 )
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 3 )
 item_type = "Screentone"
-amount = 10
 
 [node name="sprite" type="Sprite" parent="."]
 show_behind_parent = true

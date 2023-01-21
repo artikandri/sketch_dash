@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/dialog.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/GUI/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://scenes/misc/stats.stylebox" type="StyleBox" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+length = 1.8
+
+[node name="GameOver" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+
+[node name="Text" type="Label" parent="VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 503.0
+custom_fonts/font = ExtResource( 1 )
+text = "
+
+
+
+
+Thank you for playing! You died 10 times, killed 5 enemies, and finished in 00:13.25.
+
+
+
+
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new_game" type="Button" parent="VBoxContainer"]
+margin_top = 507.0
+margin_right = 984.0
+margin_bottom = 556.0
+focus_neighbour_left = NodePath("../quit")
+focus_neighbour_top = NodePath("../quit")
+focus_neighbour_right = NodePath("../controls")
+focus_neighbour_bottom = NodePath("../continue")
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.364706, 0.364706, 0.364706, 1 )
+custom_fonts/font = ExtResource( 1 )
+keep_pressed_outside = true
+text = "New Game"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+anims/fade_in = SubResource( 1 )
+
+[connection signal="pressed" from="VBoxContainer/new_game" to="." method="_on_new_game_pressed"]

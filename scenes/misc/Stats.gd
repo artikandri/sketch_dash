@@ -1,8 +1,10 @@
 extends PanelContainer
 
 var enabled = false
+onready var level = $VBoxContainer/Level
 
 func _ready():
+	level.text = "Level "+str(Globals.level)
 	Globals.save_game()
 	get_tree().set_auto_accept_quit(false)
 	hide()
@@ -42,7 +44,6 @@ func _update_item_listing():
 
 func _on_Exit_pressed():
 	quit_game()
-	pass # Replace with function body.
 
 func _notification(what):
 	if what == NOTIFICATION_WM_QUIT_REQUEST:
@@ -51,4 +52,4 @@ func _notification(what):
 func quit_game():
 	Globals.save_game()
 	enabled = false
-	# get_tree().quit()
+	get_tree().quit()

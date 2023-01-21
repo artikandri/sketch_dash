@@ -4,3 +4,12 @@
 
 [node name="Quest" type="Node"]
 script = ExtResource( 1 )
+quest_name = "Collect all screentones"
+required_item = "Screentone"
+required_amount = 10
+reward_item = "Blue ink"
+reward_amount = 1
+initial_text = "Hello, nice to meet you. My name is Ika and I need your help to collect some screentones to prettify this world.. would you please help me? I will give you a reward in exchange for your hard labor, of course."
+pending_text = "Please dont forget to collect the screentones"
+delivered_text = "Thank you! This is your ink.
+"

@@ -1,0 +1,14 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform sampler2D noise;
+
+void fragment(){
+	if(COLOR.a > 0.0){
+		vec2 uv = vec2(UV.x,UV.y);
+		COLOR.rgb = texture(noise,uv).rgb;
+		COLOR.a = texture(TEXTURE,UV).a;
+	}
+}"
